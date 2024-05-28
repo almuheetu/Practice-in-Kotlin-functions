@@ -76,10 +76,18 @@ fun ordinaryFunction(block: () -> Unit){
     println("Hi!")
 }
 
+//fun foo() {
+//    ordinaryFunction {
+//        return@ordinaryFunction
+//    }
+//}
+
+// inline Function
+inline fun inlined(block: () -> Unit){
+    println("Hello inlineFunction")
+}
 fun foo() {
-    ordinaryFunction {
-        return@ordinaryFunction
-    }
+    inlined { return }
 }
 
 fun main() {
@@ -101,6 +109,8 @@ fun main() {
     println()
     println(practiceLambda(9, 3)())
     println("${testScope()}")
+    // Non-local returns
+    foo()
 
 }
 
