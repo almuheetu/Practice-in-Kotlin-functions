@@ -35,6 +35,22 @@ tailrec fun minus(x: Int): Int {
     return minus(y)
 }
 
+fun testScope(): Int {
+    var x = 10
+    fun test(){
+        var y = 5
+        x = x * 10
+    }
+    val lambda = {
+        val y = 5
+            x + y
+    }
+    return x
+}
+
+fun getLambda(x: Int, y: Int): () -> Int{
+    return { x + y}
+}
 
 fun main() {
 
@@ -43,11 +59,14 @@ fun main() {
     val valueOne: Int = 89
     val valueTwo = valueOne entu 5
     println(valueTwo)
-
-
     println()
     // Recursive
     minus(15)
+    // pass lambda
+    val valueThree = { 7 }
+    println()
+    println()
+    println(getLambda(8, 8).invoke())
 }
 
 
