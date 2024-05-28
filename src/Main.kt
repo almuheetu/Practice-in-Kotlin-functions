@@ -35,11 +35,25 @@ tailrec fun minus(x: Int): Int {
     return minus(y)
 }
 
+
+tailrec fun plus(x: Int): Int {
+    var z = x
+    if (z >= 10) {
+        return 0
+    }
+    z += 1
+
+    println("Second_practice : $z")
+    return plus(z)
+}
+
+
+
 fun testScope(): Int {
     var x = 10
     fun test(){
         var y = 5
-        x = x * 10
+        x *= 10
     }
     val lambda = {
         val y = 5
@@ -52,6 +66,10 @@ fun getLambda(x: Int, y: Int): () -> Int{
     return { x + y}
 }
 
+fun practiceLambda(c: Int, d:Int): () -> Int{
+    return { c * d }
+}
+
 fun main() {
 
     println("${printHello("Shihab")}")
@@ -62,11 +80,15 @@ fun main() {
     println()
     // Recursive
     minus(15)
+    plus(1)
     // pass lambda
     val valueThree = { 7 }
     println()
     println()
     println(getLambda(8, 8).invoke())
+    println()
+    println(practiceLambda(9, 3)())
+    println("${testScope()}")
 }
 
 
