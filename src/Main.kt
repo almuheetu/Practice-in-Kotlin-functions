@@ -6,7 +6,7 @@ fun printHello(name: String?): Int {
   else
     println("Hi there!")
 
-  return 58
+  return 22
 }
 
 
@@ -19,6 +19,10 @@ infix fun Int.entu(a: Int): Int {
 fun main() {
 
   println("${printHello("Shihab")}")
+  val value = 89
+  val valueOne: Int = 89
+  val valueTwo = valueOne entu 5
+  println(valueTwo)
 }
 
 
