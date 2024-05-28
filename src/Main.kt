@@ -82,7 +82,8 @@ fun ordinaryFunction(block: () -> Unit){
 //    }
 //}
 
-// inline Function
+// inline Function practice
+
 inline fun inlined(block: () -> Unit){
     println("Hello inlineFunction")
 }
@@ -90,6 +91,11 @@ fun foo() {
     inlined { return }
 }
 
+
+// extra practice inline Function
+inline fun f(crossinline body: () -> Unit){
+    val f = Runnable { body() }
+}
 fun main() {
 
     println("${printHello("Shihab")}")
@@ -111,6 +117,7 @@ fun main() {
     println("${testScope()}")
     // Non-local returns
     foo()
+    f {  }
 
 }
 
