@@ -35,7 +35,7 @@ tailrec fun minus(x: Int): Int {
     return minus(y)
 }
 
-
+// for practice
 tailrec fun plus(x: Int): Int {
     var z = x
     if (z >= 10) {
@@ -65,9 +65,21 @@ fun testScope(): Int {
 fun getLambda(x: Int, y: Int): () -> Int{
     return { x + y}
 }
-
+// for practice
 fun practiceLambda(c: Int, d:Int): () -> Int{
     return { c * d }
+}
+
+
+// Non-local returns
+fun ordinaryFunction(block: () -> Unit){
+    println("Hi!")
+}
+
+fun foo() {
+    ordinaryFunction {
+        return@ordinaryFunction
+    }
 }
 
 fun main() {
@@ -89,6 +101,7 @@ fun main() {
     println()
     println(practiceLambda(9, 3)())
     println("${testScope()}")
+
 }
 
 
