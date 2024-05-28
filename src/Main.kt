@@ -25,14 +25,14 @@ fun Int.sum(x: Int, y: Int): Int {
 // Tail recursive
 
 tailrec fun minus(x: Int): Int {
-  var y = x
-  if(y <= 1) {
-    return 0
-  }
+    var y = x
+    if (y <= 1) {
+        return 0
+    }
     y -= 1
 
-  println(y)
-  return minus(y)
+    println(y)
+    return minus(y)
 }
 
 
@@ -45,9 +45,9 @@ fun main() {
     println(valueTwo)
 
 
-  println()
-  // Recursive
-  minus(15)
+    println()
+    // Recursive
+    minus(15)
 }
 
 
