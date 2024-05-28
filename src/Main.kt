@@ -1,10 +1,15 @@
-val result = 80
-val resultOne:Int = 95
+fun printHello(name: String?): Int {
+  val a: Int = 89
+  if (name != null)
+    println("Hello $name")
+  else
+    println("Hi there!")
 
-val totalResult = result + resultOne
+  return 58
+}
 fun main() {
 
-  println("my result: $totalResult")
+  println("${printHello("Shihab")}")
 }
 
 
