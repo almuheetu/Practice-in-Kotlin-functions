@@ -92,6 +92,10 @@ fun foo() {
 }
 
 
+// more inline function practice
+inline fun log(message: String){
+    println(message)
+}
 // extra practice inline Function
 inline fun f(crossinline body: () -> Unit){
     val f = Runnable { body() }
@@ -117,7 +121,8 @@ fun main() {
     println("${testScope()}")
     // Non-local returns
     foo()
-    f {  }
+    //inline function call
+    log("This message is logged inline")
 
 }
 
