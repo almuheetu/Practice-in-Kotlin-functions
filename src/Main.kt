@@ -140,6 +140,14 @@ fun main() {
     println(-a)
     println(a.unaryPlus())
     println(a.unaryMinus())
+    
+    val point = Point(30, 45) 
+    println(-point)
+    println(point)
+
+    val pointOne = PointOne(false, true)
+
+    println(!pointOne)
 
 }
 
