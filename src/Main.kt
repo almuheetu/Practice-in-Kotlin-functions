@@ -109,7 +109,8 @@ inline fun <reified T> isInstance(value: Any): Boolean {
 data class Point(val x: Int, val y: Int)
 data class PointOne(val x: Boolean, val y: Boolean)
 
-
+operator fun Point.unaryMinus() = Point(-x, -y)
+operator fun PointOne.not() = PointOne(x.not(), y.not())
 fun main() {
 
    /* println("${printHello("Shihab")}")
@@ -134,9 +135,11 @@ fun main() {
     //inline function call
     log("This message is logged inline")*/
 
-    var a = 1
+    var a = 90
 
-    println(+a)
+    println(-a)
+    println(a.unaryPlus())
+    println(a.unaryMinus())
 
 }
 
