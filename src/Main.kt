@@ -100,6 +100,16 @@ inline fun log(message: String){
 inline fun f(crossinline body: () -> Unit){
     val f = Runnable { body() }
 }
+
+
+// Reified type parameters practice
+inline fun <reified T> isInstance(value: Any): Boolean {
+    return value is T
+}
+data class Point(val x: Int, val y: Int)
+data class PointOne(val x: Boolean, val y: Boolean)
+
+
 fun main() {
 
    /* println("${printHello("Shihab")}")
