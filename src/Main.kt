@@ -174,6 +174,13 @@ fun main() {
     println(personOne == personThree)
     println(personOne === personThree)
 
+    //Non-nullable vs. Nullable Variables:
+
+    val name: String = "Jhon"
+    var nickname: String? = "Jhon"
+    nickname = null
+    println(nickname)
+
     // Elvis operator practice
     val test: String? = null
     val message = test ?: "Hi there!"
