@@ -117,8 +117,11 @@ operator fun Point.unaryMinus() = Point(-x, -y)
 operator fun PointOne.not() = PointOne(x.not(), y.not())
 
 
-// Structural Equality (==) practice
+// Structural Equality (==) && Referential equality (===)  practice
 data class Person(val name: String, val age: Int)
+
+// Safe Call Operator (?.)
+data class Man(val name: String, val age: Int)
 
 fun main() {
 
@@ -164,7 +167,7 @@ fun main() {
 //    val n: Int = 7
 //    println(m.plus(n))
 
-// Structural Equality (==) practice
+//  Structural Equality (==) && Referential equality (===)  practice
     val personOne = Person(name = "Jhon Done", age = 30)
     val personTwo = Person(name = "Jhon Doe", age = 30)
     val personThree = personOne
@@ -173,20 +176,39 @@ fun main() {
     println(personOne === personTwo)
     println(personOne == personThree)
     println(personOne === personThree)
+    println()
 
-    //Non-nullable vs. Nullable Variables:
 
+    //Non-nullable vs. Nullable Variables
     val name: String = "Jhon"
     var nickname: String? = "Jhon"
     nickname = null
     println(nickname)
+    println()
+
+
+    // Safe Call Operator (?.)
+    val man: Man? = Man("Jon", 25)
+    val safeNameLength = man?.name?.length
+    println(safeNameLength)
+    println()
+
 
     // Elvis operator practice
     val test: String? = null
     val message = test ?: "Hi there!"
     println(message)
+    println()
 
 
+    // Null Checks with if statements
+    val address: String? = "123 Main St"
+
+    if (address != null) {
+        println("The address is : $address")
+    } else {
+        println("No address available")
+    }
 }
 
 
