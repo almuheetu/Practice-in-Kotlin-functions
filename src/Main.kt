@@ -162,12 +162,14 @@ fun main() {
 //    println(m.plus(n))
 
 // Structural Equality (==) practice
-    val personOne = Person(name = "Jhon", age = 30)
-    val personTwo = Person(name = "Jhon", age = 30)
+    val personOne = Person(name = "Jhon Done", age = 30)
+    val personTwo = Person(name = "Jhon Doe", age = 30)
     val personThree = personOne
 
     println(personOne == personTwo)
     println(personOne === personTwo)
+    println(personOne == personThree)
+    println(personOne === personThree)
 
 }
 
