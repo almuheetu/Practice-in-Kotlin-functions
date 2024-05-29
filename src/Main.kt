@@ -48,31 +48,32 @@ tailrec fun plus(x: Int): Int {
 }
 
 
-
 fun testScope(): Int {
     var x = 10
-    fun test(){
+    fun test() {
         var y = 5
         x *= 10
     }
+
     val lambda = {
         val y = 5
-            x + y
+        x + y
     }
     return x
 }
 
-fun getLambda(x: Int, y: Int): () -> Int{
-    return { x + y}
+fun getLambda(x: Int, y: Int): () -> Int {
+    return { x + y }
 }
+
 // for practice
-fun practiceLambda(c: Int, d:Int): () -> Int{
+fun practiceLambda(c: Int, d: Int): () -> Int {
     return { c * d }
 }
 
 
 // Non-local returns
-fun ordinaryFunction(block: () -> Unit){
+fun ordinaryFunction(block: () -> Unit) {
     println("Hi!")
 }
 
@@ -84,20 +85,22 @@ fun ordinaryFunction(block: () -> Unit){
 
 // inline Function practice
 
-inline fun inlined(block: () -> Unit){
+inline fun inlined(block: () -> Unit) {
     println("Hello inlineFunction")
 }
+
 fun foo() {
     inlined { return }
 }
 
 
 // more inline function practice
-inline fun log(message: String){
+inline fun log(message: String) {
     println(message)
 }
+
 // extra practice inline Function
-inline fun f(crossinline body: () -> Unit){
+inline fun f(crossinline body: () -> Unit) {
     val f = Runnable { body() }
 }
 
@@ -106,6 +109,7 @@ inline fun f(crossinline body: () -> Unit){
 inline fun <reified T> isInstance(value: Any): Boolean {
     return value is T
 }
+
 data class Point(val x: Int, val y: Int)
 data class PointOne(val x: Boolean, val y: Boolean)
 
@@ -113,33 +117,32 @@ operator fun Point.unaryMinus() = Point(-x, -y)
 operator fun PointOne.not() = PointOne(x.not(), y.not())
 
 
-
 // Structural Equality (==) practice
 data class Person(val name: String, val age: Int)
 
 fun main() {
 
-   /* println("${printHello("Shihab")}")
-    val value = 89
-    val valueOne: Int = 89
-    val valueTwo = valueOne entu 5
-    println(valueTwo)
-    println()
-    // Recursive
-    minus(15)
-    plus(1)*/
+    /* println("${printHello("Shihab")}")
+     val value = 89
+     val valueOne: Int = 89
+     val valueTwo = valueOne entu 5
+     println(valueTwo)
+     println()
+     // Recursive
+     minus(15)
+     plus(1)*/
     // pass lambda
-  /*  val valueThree = { 7 }
-    println()
-    println()
-    println(getLambda(8, 8).invoke())
-    println()
-    println(practiceLambda(9, 3)())
-    println("${testScope()}")
-    // Non-local returns
-    foo()
-    //inline function call
-    log("This message is logged inline")*/
+    /*  val valueThree = { 7 }
+      println()
+      println()
+      println(getLambda(8, 8).invoke())
+      println()
+      println(practiceLambda(9, 3)())
+      println("${testScope()}")
+      // Non-local returns
+      foo()
+      //inline function call
+      log("This message is logged inline")*/
 
 //    var a = 90
 
@@ -170,6 +173,12 @@ fun main() {
     println(personOne === personTwo)
     println(personOne == personThree)
     println(personOne === personThree)
+
+    // Elvis operator practice
+    val test: String? = null
+    val message = test ?: "Hi there!"
+    println(message)
+
 
 }
 
