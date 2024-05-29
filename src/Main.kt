@@ -102,7 +102,7 @@ inline fun f(crossinline body: () -> Unit){
 }
 fun main() {
 
-    println("${printHello("Shihab")}")
+   /* println("${printHello("Shihab")}")
     val value = 89
     val valueOne: Int = 89
     val valueTwo = valueOne entu 5
@@ -110,9 +110,9 @@ fun main() {
     println()
     // Recursive
     minus(15)
-    plus(1)
+    plus(1)*/
     // pass lambda
-    val valueThree = { 7 }
+  /*  val valueThree = { 7 }
     println()
     println()
     println(getLambda(8, 8).invoke())
@@ -122,7 +122,11 @@ fun main() {
     // Non-local returns
     foo()
     //inline function call
-    log("This message is logged inline")
+    log("This message is logged inline")*/
+
+    var a = 1
+
+    println(+a)
 
 }
 
