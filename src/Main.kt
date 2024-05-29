@@ -111,6 +111,12 @@ data class PointOne(val x: Boolean, val y: Boolean)
 
 operator fun Point.unaryMinus() = Point(-x, -y)
 operator fun PointOne.not() = PointOne(x.not(), y.not())
+
+
+
+// Structural Equality (==) practice
+data class Person(val name: String, val age: Int)
+
 fun main() {
 
    /* println("${printHello("Shihab")}")
@@ -135,27 +141,33 @@ fun main() {
     //inline function call
     log("This message is logged inline")*/
 
-    var a = 90
+//    var a = 90
 
-    println(-a)
-    println(a.unaryPlus())
-    println(a.unaryMinus())
-    
-    val point = Point(30, 45) 
-    println(-point)
-    println(point)
-
-    val pointOne = PointOne(false, true)
-
-    println(!pointOne)
+//    println(-a)
+//    println(a.unaryPlus())
+//    println(a.unaryMinus())
+//
+//    val point = Point(30, 45)
+//    println(-point)
+//    println(point)
+//
+//    val pointOne = PointOne(false, true)
+//
+//    println(!pointOne)
 
 
 //    Binary operations practice
-    val m: Int = 5
-    val n: Int = 7
-    println(m.plus(n))
+//    val m: Int = 5
+//    val n: Int = 7
+//    println(m.plus(n))
 
+// Structural Equality (==) practice
+    val personOne = Person(name = "Jhon", age = 30)
+    val personTwo = Person(name = "Jhon", age = 30)
+    val personThree = personOne
 
+    println(personOne == personTwo)
+    println(personOne === personTwo)
 
 }
 
