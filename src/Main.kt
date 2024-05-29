@@ -149,6 +149,14 @@ fun main() {
 
     println(!pointOne)
 
+
+//    Binary operations practice
+    val m: Int = 5
+    val n: Int = 7
+    println(m.plus(n))
+
+
+
 }
 
 
