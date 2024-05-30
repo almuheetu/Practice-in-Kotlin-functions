@@ -1,4 +1,4 @@
-// Explicit and Implicit
+// Explicit and Implic
 fun printHello(name: String?): Int {
     val a: Int = 89
     if (name != null)
@@ -21,7 +21,17 @@ fun Int.sum(x: Int, y: Int): Int {
     return this + x
 }
 
+class Test {
+    companion object{
+        fun printHello(){
+            println("Hellow")
+        }
+    }
 
+    fun printWorld(){
+        println("World")
+    }
+}
 // Tail recursive
 
 tailrec fun minus(x: Int): Int {
@@ -124,7 +134,8 @@ data class Person(val name: String, val age: Int)
 data class Man(val name: String, val age: Int)
 
 fun main() {
-
+Test.printHello()
+Test().printWorld()
     /* println("${printHello("Shihab")}")
      val value = 89
      val valueOne: Int = 89
@@ -168,7 +179,7 @@ fun main() {
 //    println(m.plus(n))
 
 //  Structural Equality (==) && Referential equality (===)  practice
-    val personOne = Person(name = "Jhon Done", age = 30)
+    val personOne = Person(name = "Jhon Doe", age = 30)
     val personTwo = Person(name = "Jhon Doe", age = 30)
     val personThree = personOne
 
